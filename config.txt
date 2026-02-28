@@ -1,2 +1,2 @@
 installer=install.py
-installedfilepath=/home/core/.local/share/applications/ClassiCube.desktop
+installedfilepath=/home/{username}/.local/share/applications/ClassiCube.desktop
