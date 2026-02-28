@@ -37,15 +37,6 @@ Icon={ICON_FILE}
 Path={GAME_DIR}
 Terminal=false
 Categories=Game;
-Actions=singleplayer;resume;
-
-[Desktop Action singleplayer]
-Name=Start singleplayer
-Exec={GAME_DIR}/ClassiCube --singleplayer
-
-[Desktop Action resume]
-Name=Resume last server
-Exec={GAME_DIR}/ClassiCube --resume
 """
 
 # Write the desktop entry
