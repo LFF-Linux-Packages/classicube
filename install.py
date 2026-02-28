@@ -54,6 +54,8 @@ with open(DESKTOP_FILE, "w") as f:
 
 # Make it executable
 DESKTOP_FILE.chmod(DESKTOP_FILE.stat().st_mode | stat.S_IEXEC)
+EXEC = GAME_DIR / "ClassiCube"
+EXEC.chmod(EXEC.stat().st_mode | stat.S_IEXEC)
 
 print(f"{DESKTOP_FILE} created and installed in your local applications directory.")
 
