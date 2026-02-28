@@ -34,7 +34,6 @@ Comment=Minecraft Classic inspired sandbox game
 Name=ClassiCube
 Exec={GAME_DIR}/ClassiCube
 Icon={ICON_FILE}
-Path={GAME_DIR}
 Terminal=false
 Categories=Game;
 """
