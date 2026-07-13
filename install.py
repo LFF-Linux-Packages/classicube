@@ -73,22 +73,21 @@ USER_DATA_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/classicube"
 
 mkdir -p "$USER_DATA_DIR"
 
-# One-time seed: copy everything except the binary itself (texpacks, audio, etc.)
-# into the user's own writable directory so per-user saves/accounts/options work
-# without touching the read-only shared install.
-if [ ! -f "$USER_DATA_DIR/.seeded" ]; then
+copy_all() {
     find "$GAME_DIR" -mindepth 1 -maxdepth 1 \
-        -not -name "ClassiCube" \
         -not -name "install.py" \
         -not -name "apt.txt" \
         -not -name "config.txt" \
         -exec cp -r {} "$USER_DATA_DIR"/ \;
-    touch "$USER_DATA_DIR/.seeded"
+}
+
+if [ ! -f "$USER_DATA_DIR/ClassiCube" ]; then
+    copy_all
 fi
 
 cd "$USER_DATA_DIR"
-exec "$GAME_DIR/ClassiCube" "$@"
-""".replace("__GAME_DIR__", str(SYS_GAME_DIR))
+exec "$USER_DATA_DIR/ClassiCube" "$@"
+"""""".replace("__GAME_DIR__", str(SYS_GAME_DIR))
 tmp_wrapper = GAME_DIR / "classicube_wrapper.tmp"
 with open(tmp_wrapper, "w") as w:
     w.write(wrapper_script_content)
