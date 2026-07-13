@@ -87,7 +87,8 @@ fi
 
 cd "$USER_DATA_DIR"
 exec "$USER_DATA_DIR/ClassiCube" "$@"
-"""""".replace("__GAME_DIR__", str(SYS_GAME_DIR))
+""".replace("__GAME_DIR__", str(SYS_GAME_DIR))
+
 tmp_wrapper = GAME_DIR / "classicube_wrapper.tmp"
 with open(tmp_wrapper, "w") as w:
     w.write(wrapper_script_content)
