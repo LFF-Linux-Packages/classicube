@@ -126,6 +126,9 @@ subprocess.run(["sudo", "chmod", "+x", str(SYS_DESKTOP)], check=True)
 
 # 8. Trigger desktop application menu caching system updates
 print("Refreshing platform global desktop integration databases...")
-subprocess.run(["sudo", "update-desktop-database", "/usr/share/applications"], check=False)
+try:
+    subprocess.run(["sudo", "update-desktop-database", "/usr/share/applications"], check=False)
+except Exception:
+    print("Warning: update-desktop-database failed. It may not be installed.")
 
 print("ClassiCube configuration deployment completed successfully.")
